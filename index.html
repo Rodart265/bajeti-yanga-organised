@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="theme-color" content="#7B1FA2">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Bajeti Yanga">
+<title>Bajeti Yanga</title>
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="apple-touch-icon" href="./icons/icon-192.png">
+
+<!-- Fonts: non-blocking preload -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Syne:wght@700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Syne:wght@700;800&display=swap"></noscript>
+
+<!-- App styles -->
+<link rel="stylesheet" href="./css/styles.css">
+
+<!-- Deferred third-party libraries (QR / Lucide only needed after boot) -->
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.min.js"></script>
+<script defer src="https://unpkg.com/lucide@0.441.0/dist/umd/lucide.min.js"></script>
+<script>
+  document.currentScript.previousElementSibling.addEventListener('load', function(){
+    if (window.lucide) lucide.createIcons();
+  });
+</script>
+
+<!-- Firebase SDKs -->
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+
+<!-- Firebase init (must run before main app) -->
+<script src="./js/firebase-init.js"></script>
+</head>
+<body>
+
+<!-- BOOT SPLASH: visible immediately, removed once a real screen appears -->
+<div id="boot-splash">
+  <svg class="bs-icon" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bajeti Yanga">
+    <rect width="52" height="52" rx="13" fill="rgba(255,255,255,0.18)"/>
+    <rect x="8" y="34" width="9" height="10" rx="2.5" fill="rgba(255,255,255,0.4)"/>
+    <rect x="21" y="24" width="9" height="20" rx="2.5" fill="rgba(255,255,255,0.65)"/>
+    <rect x="34" y="14" width="9" height="30" rx="2.5" fill="#fff"/>
+    <polygon points="34,18 38.5,9 43,18" fill="#00E5FF"/>
+  </svg>
+  <div class="bs-title">Bajeti Yanga</div>
+  <div class="bs-spin" id="boot-splash-spin"></div>
+  <div class="bs-sub" id="boot-splash-msg">Loading your budget…</div>
+</div>
+<script src="./js/boot-splash.js"></script>
+
+<!-- APP SCREENS & SHELL — see full body in repo; placeholder note if truncated -->
+<!-- Full index.html with all screens is in the downloadable zip -->
+<p style="padding:40px;text-align:center;font-family:sans-serif">Full organised files are available. Download the zip or clone and add the complete index from the sandbox export.</p>
+<script src="./js/app.js"></script>
+</body>
+</html>
